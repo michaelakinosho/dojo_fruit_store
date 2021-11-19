@@ -20,18 +20,23 @@
       </header>
   
       <main role="main">
-  
+
         <section class="jumbotron text-center">
           <div class="container">
             <h1 class="jumbotron-heading">Dojo Fruits</h1>
             <p>Please figure out how to display the images here...</p>
-
+            <div class="available-fruits">
+              {% for fruit in fruits %}
+                <div>{{fruit['name']}}</div>
+                <img src={{ url_for('static', filename='img/'+fruit['image_name'])}}>
+              {% endfor %}
+            </div>
             <p>
               <a href="/" class="btn btn-primary my-2">Go back</a>
             </p>
           </div>
         </section>
-  
+
       </main>
       
 </body>

@@ -42,9 +42,10 @@ def fruits_list(order_dict):
 def page_not_found(error):
     return "Sorry! Page Not Available."
 
-#@app.errorhandler(TypeError)
-#def checkout_error(error):
-#    return render_template("index.html")
+@app.errorhandler(TypeError)
+def checkout_error(error):
+    message = "Please contact Michael Akinosho about this error"
+    return render_template("oops.html",message=message)
 
 if __name__=="__main__":   
     app.run(debug=True)
